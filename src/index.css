@@ -1,0 +1,69 @@
+/* ─── Reset & Base ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green:      #00ff88;
+  --green-dim:  #00cc6a;
+  --green-dark: #004d29;
+  --cyan:       #00e5ff;
+  --purple:     #bf00ff;
+  --red:        #ff3366;
+  --yellow:     #ffd700;
+  --bg:         #020d1a;
+  --bg2:        #04152b;
+  --bg3:        #061d3a;
+  --border:     #0a4060;
+  --text-dim:   #336655;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--green);
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 2px; }
+
+/* ─── Animations ────────────────────────────────────────────────────── */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bootReveal {
+  to { opacity: 1; }
+}
+
+@keyframes glitch {
+  0%, 100% { text-shadow: 0 0 20px rgba(0,255,136,0.8); }
+  20%       { text-shadow: -2px 0 #ff3366, 2px 0 #00e5ff; }
+  40%       { text-shadow: 2px 0 #bf00ff, -2px 0 #00ff88; }
+  60%       { text-shadow: 0 0 20px rgba(0,255,136,0.8); }
+}
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.blink {
+  animation: blink 1.2s step-end infinite;
+}

@@ -1,0 +1,41 @@
+.panel {
+  height: 76px;
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+  padding: 5px 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.header {
+  font-size: 9px;
+  color: var(--cyan);
+  letter-spacing: 2px;
+  margin-bottom: 3px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.feed {
+  overflow: hidden;
+}
+
+.entry {
+  font-size: 10px;
+  line-height: 1.6;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.ts  { color: #1a3a28; }
+.tag { color: var(--green-dim); }
+.msg { color: #1a5a3a; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .panel { height: 60px; }
+}

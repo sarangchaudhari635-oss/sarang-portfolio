@@ -1,0 +1,20 @@
+.line {
+  font-size: 12px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #c8d8e8;
+}
+
+.green  { color: var(--green); }
+.cyan   { color: var(--cyan); }
+.dim    { color: var(--text-dim); }
+.red    { color: var(--red); }
+.yellow { color: var(--yellow); }
+.purple { color: var(--purple); }
+.white  { color: #c8d8e8; }
+.prompt { color: #3a7050; }
+
+@media (max-width: 600px) {
+  .line { font-size: 11px; }
+}
