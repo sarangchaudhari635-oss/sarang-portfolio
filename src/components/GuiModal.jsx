@@ -2,37 +2,76 @@ import styles from './GuiModal.module.css'
 
 const PROJECTS = [
   {
-    name: 'WasteMatch',
-    stack: 'React · Node.js · MongoDB · TensorFlow',
-    desc: 'AI-powered platform connecting waste producers with recyclers. ML waste classification at 95% accuracy. Won ETHGlobal 2024.',
-    award: 'WINNER — ETHGlobal 2024',
+    name: 'FACTLINE',
+    stack: 'Node.js · Express · PostgreSQL · React · NLP · Perplexity API',
+    desc: 'Real-time misinformation detection system that analyzes user-submitted claims, validates them using AI and external sources, and identifies trending false narratives through semantic clustering.',
+    award: null,
+  },
+  {
+    name: 'NodeSphere',
+    stack: 'React · TypeScript · Vite · React Flow · LocalStorage · AI',
+    desc: 'AI-powered visual thinking and mind-mapping platform that transforms a single idea into a structured network of insights. Features interactive node-based canvas and local-first knowledge organization.',
+    award: null,
+  },
+  {
+    name: 'ShadowHunter',
+    stack: 'React · GSAP · Node.js · Express · Google Cloud · Opal AI',
+    desc: 'AI-powered email security tool that maps a user’s digital footprint by discovering websites linked to their email, detects breached platforms, and classifies them as safe or unsafe.',
+    award: null,
   },
   {
     name: 'MOLE',
-    stack: 'Python · Scapy · TensorFlow · FastAPI',
-    desc: 'Network monitoring & intrusion detection system using LSTM anomaly detection. Detects port scans, DDoS, malware C2 traffic.',
-    award: 'RUNNER-UP — HackMIT 2023',
+    stack: 'React · Next.js · Supabase · PostgreSQL · Tailwind CSS',
+    desc: 'B2B circular economy platform that enables industries to exchange industrial waste as reusable resources. Features structured material matching, deal-flow tracking, and waste forecasting.',
+    award: 'Techvision 1st Runner Up',
+  },
+  {
+    name: 'FundingScout',
+    stack: 'Python · FastAPI · Lyzr · Qdrant · SerpAPI · BeautifulSoup',
+    desc: 'AI-powered funding intelligence agent that autonomously scans the web for startup funding data, extracts structured insights from unstructured articles, and maintains a semantic memory.',
+    award: null,
   },
   {
     name: 'PrivBadge',
-    stack: 'Solidity · Web3.js · ZK-SNARKs · IPFS',
-    desc: 'Decentralised ZK credential system. Prove identity attributes without revealing personal data. ERC-721 on-chain registry.',
-    award: 'WINNER — Best Privacy Hack',
+    stack: 'StarkNet · Cairo · Pedersen Hash · ArgentX',
+    desc: 'On-chain credential system on StarkNet L2. Uses Pedersen Hash commitments for privacy-preserving credential issuance. NFT badges for verifiable on-chain achievements.',
+    award: 'Testnet Live — StarkNet Sepolia',
   },
   {
-    name: 'SecureVault',
-    stack: 'React · Node.js · Argon2 · WebCrypto',
-    desc: 'End-to-end encrypted password manager. Zero-knowledge architecture — server never sees plaintext. AES-256-GCM client-side.',
-    award: null,
+    name: 'SYGNIX',
+    stack: 'ESP32 · KiCad PCB · FlutterFlow · Dart',
+    desc: 'Custom-designed PCB (KiCad) with multi-sensor integration on ESP32. Real-time cloud sync visualised via a FlutterFlow mobile app. Team lead at Hardware Hackathon Unplugged 3.0.',
+    award: 'Round 2 Qualified — Unplugged 3.0',
+  },
+  {
+    name: 'REFORMX',
+    stack: 'Python · IoT Sensors · ML',
+    desc: 'Smart waste management combining IoT smart bins with anomaly detection. AI-optimised waste collection routing with real-time monitoring. Presented at SUSTAINX 2026.',
+    award: '1st Runner-Up — SUSTAINX 2026 🥈',
   },
 ]
 
 const SKILLS = [
-  'Python', 'JavaScript', 'Solidity', 'Bash', 'SQL',
-  'React', 'Node.js', 'FastAPI', 'Django', 'Web3.js',
-  'Kali Linux', 'Metasploit', 'Burp Suite', 'Wireshark', 'Nmap',
-  'Ethereum', 'IPFS', 'ZK-SNARKs', 'Hardhat',
-  'Docker', 'AWS', 'Git', 'PostgreSQL', 'MongoDB', 'Redis',
+  // Domains
+  'IoT', 'Blockchain', 'Cybersecurity', 'PCB Design',
+  // Hardware
+  'ESP32', 'KiCad', 'Multi-Sensor Integration',
+  // Blockchain / Web3
+  'StarkNet', 'Cairo', 'Pedersen Hash', 'ZK Commitments', 'NFTs (ERC-721)', 'ArgentX', 'Braavos',
+  // Development
+  'FlutterFlow', 'Dart', 'Python', 'JavaScript', 'React', 'Node.js', 'Web3.js',
+  // Security & Tools
+  'CTF Competitions', 'Network Analysis', 'Metasploit', 'Burp Suite', 'Wireshark', 'Nmap',
+  // Other
+  'Git', 'GitHub', 'Docker', 'Linux', 'PostgreSQL', 'MongoDB',
+]
+
+const CERTS = [
+  { name: 'Introduction to IoT & Digital Transformation', issuer: 'Cisco Networking Academy', date: 'Sep 2025' },
+  { name: 'Cyber Security Job Simulation', issuer: 'Deloitte Australia (Forage)', date: 'Dec 2025' },
+  { name: 'Quantitative Research Job Simulation', issuer: 'J.P. Morgan (Forage)', date: 'Dec 2025' },
+  { name: 'Echelon 2k26 — ISEA Stay Safe Online', issuer: 'NIT Surat', date: 'Jan 2026' },
+  { name: 'Open Source Connect', issuer: 'OSCG CO LTD', date: 'Feb 2026' },
 ]
 
 export default function GuiModal({ open, onClose }) {
@@ -52,17 +91,20 @@ export default function GuiModal({ open, onClose }) {
           <div className={styles.sectionTitle}>IDENTITY</div>
           <div className={styles.aboutGrid}>
             <div className={styles.aboutCard}>
-              <div className={styles.avatar}>S</div>
+              <div className={styles.avatar}>SC</div>
               <div>
-                <div className={styles.name}>Sarang</div>
-                <div className={styles.role}>Full-Stack Developer &amp; Security Researcher</div>
-                <div className={styles.location}>📍 Mumbai, India</div>
+                <div className={styles.name}>Sarang Chaudhari</div>
+                <div className={styles.role}>B.Tech — IoT, Blockchain &amp; Cybersecurity</div>
+                <div className={styles.location}>📍 Mumbai, Maharashtra, India</div>
+                <div className={styles.location}>🎓 Smt Indira Gandhi College Of Engineering</div>
               </div>
             </div>
             <p className={styles.bio}>
-              CS student passionate about building secure, innovative systems. Expertise spans
-              full-stack web development, blockchain engineering, and ethical hacking. Open to
-              internships, research roles, and exciting opportunities.
+              Passionate B.Tech student specialising in IoT, Blockchain, and Cybersecurity.
+              I build end-to-end systems — from custom PCB hardware (KiCad + ESP32) to
+              on-chain ZK credential protocols on StarkNet. Active CTF participant,
+              hackathon winner, and open-source contributor. Open to internships, research
+              roles, and exciting collaborations.
             </p>
           </div>
         </section>
@@ -94,13 +136,15 @@ export default function GuiModal({ open, onClose }) {
 
         {/* Hackathons */}
         <section className={styles.section}>
-          <div className={styles.sectionTitle}>HACKATHONS</div>
+          <div className={styles.sectionTitle}>HACKATHONS &amp; EVENTS</div>
           <div className={styles.hackGrid}>
             {[
-              { name: 'ETHGlobal 2024',   result: 'WINNER',    detail: 'Best Privacy Hack (PrivBadge)' },
-              { name: 'SIH 2024',         result: 'FINALIST',  detail: 'National Top 10 (WasteMatch)' },
-              { name: 'HackMIT 2023',     result: 'RUNNER-UP', detail: 'Security Track (MOLE)' },
-              { name: 'HTB CTF 2024',     result: 'TOP 5%',    detail: 'Web + Crypto categories' },
+              { name: 'SUSTAINX 2026', result: '1ST RUNNER-UP', detail: 'Poster Presentation — REFORMX (S.I.E.S GST)' },
+              { name: 'Unplugged 3.0', result: 'ROUND 2', detail: 'Hardware Hackathon — SYGNIX (DJ Sanghvi)' },
+              { name: 'PAN-IIT CTF 2025', result: 'COMPETED', detail: 'Redfox Cybersecurity CTF' },
+              { name: 'Anjuman Islamia Hackathon', result: 'PARTICIPATED', detail: 'Offline hardware hackathon' },
+              { name: 'FlutterFlow Workshop', result: 'ATTENDED', detail: 'Mobile dev — FFDG Mumbai' },
+              { name: 'Cyber+Blockchain Workshop', result: 'ATTENDED', detail: 'Sanjivani University' },
             ].map(h => (
               <div key={h.name} className={styles.hackCard}>
                 <div className={styles.hackName}>{h.name}</div>
@@ -111,14 +155,27 @@ export default function GuiModal({ open, onClose }) {
           </div>
         </section>
 
+        {/* Certifications */}
+        <section className={styles.section}>
+          <div className={styles.sectionTitle}>CERTIFICATIONS</div>
+          <div className={styles.hackGrid}>
+            {CERTS.map(c => (
+              <div key={c.name} className={styles.hackCard}>
+                <div className={styles.hackName}>{c.name}</div>
+                <div className={styles.hackResult}>{c.date}</div>
+                <div className={styles.hackDetail}>{c.issuer}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Contact */}
         <section className={styles.section}>
           <div className={styles.sectionTitle}>CONTACT</div>
           <div className={styles.contactGrid}>
-            <a className={styles.contactLink} href="mailto:sarang@protonmail.com">✉ sarang@protonmail.com</a>
-            <a className={styles.contactLink} href="https://github.com/sarang" target="_blank" rel="noreferrer">⌥ github.com/sarang</a>
-            <a className={styles.contactLink} href="https://linkedin.com/in/sarang" target="_blank" rel="noreferrer">⬡ linkedin.com/in/sarang</a>
-            <a className={styles.contactLink} href="/resume.pdf" target="_blank" rel="noreferrer">↓ Download Resume</a>
+            <a className={styles.contactLink} href="https://github.com/sarangchaudhari635-oss" target="_blank" rel="noreferrer">⌥ github.com/sarangchaudhari635-oss</a>
+            <a className={styles.contactLink} href="https://linkedin.com/in/sarang-chaudhari-b10942381" target="_blank" rel="noreferrer">⬡ linkedin.com/in/sarang-chaudhari-b10942381</a>
+            <a className={styles.contactLink} href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noreferrer">↓ Download Resume</a>
           </div>
         </section>
 

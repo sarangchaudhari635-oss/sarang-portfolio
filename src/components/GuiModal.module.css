@@ -84,8 +84,8 @@
 }
 
 .avatar {
-  width: 48px;
-  height: 48px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: var(--green-dark);
   border: 1px solid var(--green-dim);
@@ -93,8 +93,9 @@
   align-items: center;
   justify-content: center;
   color: var(--green);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 700;
+  letter-spacing: 1px;
   flex-shrink: 0;
 }
 

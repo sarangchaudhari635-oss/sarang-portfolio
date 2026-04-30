@@ -148,6 +148,7 @@ export default function Terminal({ onGuiOpen, onMatrixToggle }) {
         `/home/sarang/blockchain/${arg}`,
         `/home/sarang/research/${arg}`,
         `/home/sarang/hackathons/${arg}`,
+        `/home/sarang/certs/${arg}`,
       ]
       const data = candidates.reduce((acc, p) => acc || FILES[p], null)
       if (data) addLines(data)
@@ -182,8 +183,17 @@ export default function Terminal({ onGuiOpen, onMatrixToggle }) {
 
     // ── gui ───────────────────────────────────────────────
     if (cmd === 'gui' || cmd === 'portfolio') {
-      addLines([['green', '  Opening visual portfolio...'], ['dim', '  Close the modal to return.']])
+      addLines([['green',  '  Opening visual portfolio...'], ['dim', '  Close the modal to return.']])
       setTimeout(onGuiOpen, 300)
+      return
+    }
+
+    // ── resume ────────────────────────────────────────────
+    if (cmd === 'resume') {
+      addLines(COMMANDS.resume())
+      setTimeout(() => {
+        window.open(`${import.meta.env.BASE_URL}resume.pdf`, '_blank')
+      }, 800)
       return
     }
 
