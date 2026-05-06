@@ -67,6 +67,7 @@ const SKILLS = [
 ]
 
 const CERTS = [
+  { name: 'FlutterFlow Student Ambassador', issuer: 'FlutterFlow — SIGCE College', date: '2026' },
   { name: 'Introduction to IoT & Digital Transformation', issuer: 'Cisco Networking Academy', date: 'Sep 2025' },
   { name: 'Cyber Security Job Simulation', issuer: 'Deloitte Australia (Forage)', date: 'Dec 2025' },
   { name: 'Quantitative Research Job Simulation', issuer: 'J.P. Morgan (Forage)', date: 'Dec 2025' },
@@ -97,14 +98,15 @@ export default function GuiModal({ open, onClose }) {
                 <div className={styles.role}>B.Tech — IoT, Blockchain &amp; Cybersecurity</div>
                 <div className={styles.location}>📍 Mumbai, Maharashtra, India</div>
                 <div className={styles.location}>🎓 Smt Indira Gandhi College Of Engineering</div>
+                <div className={styles.location}>🚀 FlutterFlow Student Ambassador — SIGCE</div>
               </div>
             </div>
             <p className={styles.bio}>
               Passionate B.Tech student specialising in IoT, Blockchain, and Cybersecurity.
               I build end-to-end systems — from custom PCB hardware (KiCad + ESP32) to
-              on-chain ZK credential protocols on StarkNet. Active CTF participant,
-              hackathon winner, and open-source contributor. Open to internships, research
-              roles, and exciting collaborations.
+              on-chain ZK credential protocols on StarkNet. FlutterFlow Student Ambassador
+              at SIGCE, active CTF participant, hackathon veteran, and open-source
+              contributor. Open to internships, research roles, and exciting collaborations.
             </p>
           </div>
         </section>
@@ -141,6 +143,10 @@ export default function GuiModal({ open, onClose }) {
             {[
               { name: 'SUSTAINX 2026', result: '1ST RUNNER-UP', detail: 'Poster Presentation — REFORMX (S.I.E.S GST)' },
               { name: 'Unplugged 3.0', result: 'ROUND 2', detail: 'Hardware Hackathon — SYGNIX (DJ Sanghvi)' },
+              { name: 'AIKTC Hackatoon', result: 'PARTICIPATED', detail: 'National-level hackathon — AI & Innovation (Kalsekar)' },
+              { name: 'CodeLites 2.0', result: 'PARTICIPATED', detail: '24hr hackathon — Agentic AI, Web3 (PDEA Pune)' },
+              { name: 'GDG Build & Grow', result: 'PARTICIPATED', detail: 'Agentic AI w/ Gemini — GDG Cloud × NMIMS MPSTME' },
+              { name: 'Mumbai Hacks 2025', result: 'PARTICIPATED', detail: 'India\'s largest Agentic AI hackathon (NESCO, 3500+)' },
               { name: 'PAN-IIT CTF 2025', result: 'COMPETED', detail: 'Redfox Cybersecurity CTF' },
               { name: 'Anjuman Islamia Hackathon', result: 'PARTICIPATED', detail: 'Offline hardware hackathon' },
               { name: 'FlutterFlow Workshop', result: 'ATTENDED', detail: 'Mobile dev — FFDG Mumbai' },
