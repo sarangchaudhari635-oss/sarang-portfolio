@@ -18,6 +18,7 @@ export const COMMANDS = {
     ['white', '  whoami          Identity record'],
     ['white', '  skills          Technical skills matrix'],
     ['white', '  projects        Projects overview'],
+    ['white', '  experience      Work experience & ambassador roles'],
     ['white', '  hackathons      Hackathon history & wins'],
     ['white', '  certs           Licenses & certifications'],
     ['white', '  contact         Social links & email'],
@@ -50,7 +51,8 @@ export const COMMANDS = {
     ['white', '  Role       : B.Tech Student — IoT, Blockchain & Cybersecurity'],
     ['white', '  Location   : Mumbai, Maharashtra, India'],
     ['white', '  College    : Smt Indira Gandhi College Of Engineering'],
-    ['yellow', '  Ambassador : FlutterFlow Student Ambassador — SIGCE'],
+    ['yellow', '  Ambassador : Google Student Ambassador'],
+    ['yellow', '             : FlutterFlow Student Ambassador — SIGCE'],
     ['white', '  Status     : Open to Opportunities'],
     ['', ''],
     ['green', '  Expertise  : IoT | Blockchain | Cybersecurity | PCB Design'],
@@ -177,12 +179,25 @@ export const COMMANDS = {
     ['dim', '    → Attended'],
   ],
 
+  experience: () => [
+    ['', ''],
+    ['cyan', '  ┌─ EXPERIENCE ────────────────────────────────────┐'],
+    ['', ''],
+    ['green', '  ▶ Google Student Ambassador'],
+    ['white', '    Google  |  2026 – Present'],
+    ['dim',   '    Official Google Student Ambassador at SIGCE —'],
+    ['dim',   '    promoting Google technologies, developer programs,'],
+    ['dim',   '    and fostering a tech-driven campus culture.'],
+    ['', ''],
+    ['green', '  ▶ FlutterFlow Student Ambassador'],
+    ['white', '    FlutterFlow × SIGCE  |  2026 – Present'],
+    ['dim',   '    Organising workshops, speaking at tech clubs,'],
+    ['dim',   '    and empowering students to build no-code apps.'],
+  ],
+
   certs: () => [
     ['', ''],
     ['cyan', '  ┌─ LICENSES & CERTIFICATIONS ───────────────────┐'],
-    ['', ''],
-    ['green', '  ▶ FlutterFlow Student Ambassador'],
-    ['white', '    FlutterFlow — SIGCE College  |  2026'],
     ['', ''],
     ['green', '  ▶ Open Source Connect'],
     ['white', '    OSCG CO LTD  |  Feb 2026'],
@@ -373,7 +388,7 @@ export const SQLMAP = () => [
 
 export const ALL_COMMANDS = [
   'help', 'ls', 'cd', 'pwd', 'cat', 'clear', 'whoami',
-  'skills', 'projects', 'hackathons', 'certs', 'contact', 'resume', 'gui',
+  'skills', 'projects', 'experience', 'hackathons', 'certs', 'contact', 'resume', 'gui',
   'netstat', 'nmap', 'whois', 'dirb', 'hydra', 'sqlmap',
   'coffee', 'hack', 'matrix', 'sudo hire-sarang',
 ]

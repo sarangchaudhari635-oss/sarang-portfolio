@@ -66,8 +66,22 @@ const SKILLS = [
   'Git', 'GitHub', 'Docker', 'Linux', 'PostgreSQL', 'MongoDB',
 ]
 
+const EXPERIENCE = [
+  {
+    role: 'Google Student Ambassador',
+    org: 'Google',
+    duration: '2026 – Present',
+    desc: 'Official Google Student Ambassador — representing Google at SIGCE, promoting Google technologies, developer programs, and fostering a tech-driven campus culture.',
+  },
+  {
+    role: 'FlutterFlow Student Ambassador',
+    org: 'FlutterFlow × SIGCE',
+    duration: '2026 – Present',
+    desc: 'Official campus representative for FlutterFlow — organising workshops, speaking at tech clubs, and empowering students to build no-code/low-code mobile apps.',
+  },
+]
+
 const CERTS = [
-  { name: 'FlutterFlow Student Ambassador', issuer: 'FlutterFlow — SIGCE College', date: '2026' },
   { name: 'Introduction to IoT & Digital Transformation', issuer: 'Cisco Networking Academy', date: 'Sep 2025' },
   { name: 'Cyber Security Job Simulation', issuer: 'Deloitte Australia (Forage)', date: 'Dec 2025' },
   { name: 'Quantitative Research Job Simulation', issuer: 'J.P. Morgan (Forage)', date: 'Dec 2025' },
@@ -98,16 +112,32 @@ export default function GuiModal({ open, onClose }) {
                 <div className={styles.role}>B.Tech — IoT, Blockchain &amp; Cybersecurity</div>
                 <div className={styles.location}>📍 Mumbai, Maharashtra, India</div>
                 <div className={styles.location}>🎓 Smt Indira Gandhi College Of Engineering</div>
+                <div className={styles.location}>🌐 Google Student Ambassador</div>
                 <div className={styles.location}>🚀 FlutterFlow Student Ambassador — SIGCE</div>
               </div>
             </div>
             <p className={styles.bio}>
               Passionate B.Tech student specialising in IoT, Blockchain, and Cybersecurity.
               I build end-to-end systems — from custom PCB hardware (KiCad + ESP32) to
-              on-chain ZK credential protocols on StarkNet. FlutterFlow Student Ambassador
-              at SIGCE, active CTF participant, hackathon veteran, and open-source
+              on-chain ZK credential protocols on StarkNet. Google Student Ambassador &
+              FlutterFlow Student Ambassador at SIGCE, active CTF participant, hackathon veteran, and open-source
               contributor. Open to internships, research roles, and exciting collaborations.
             </p>
+          </div>
+        </section>
+
+        {/* Experience */}
+        <section className={styles.section}>
+          <div className={styles.sectionTitle}>EXPERIENCE</div>
+          <div className={styles.hackGrid}>
+            {EXPERIENCE.map(e => (
+              <div key={e.role} className={styles.hackCard}>
+                <div className={styles.hackName}>{e.role}</div>
+                <div className={styles.hackResult}>{e.duration}</div>
+                <div className={styles.hackDetail}>{e.org}</div>
+                <div className={styles.projectDesc} style={{ marginTop: '0.5rem', fontSize: '0.78rem', opacity: 0.8 }}>{e.desc}</div>
+              </div>
+            ))}
           </div>
         </section>
 
