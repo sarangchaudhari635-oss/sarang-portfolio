@@ -68,16 +68,25 @@ const SKILLS = [
 
 const EXPERIENCE = [
   {
+    role: 'Web Development Intern',
+    org: 'Wheeltrix',
+    duration: 'May 2026 – Jun 2026  |  Remote, India',
+    desc: 'Selected as Web Development Intern at Wheeltrix — working on real-world web projects, sharpening front-end and back-end skills, and gaining hands-on industry experience as a first-year engineering student.',
+    badge: '🚀 Active Internship',
+  },
+  {
     role: 'Google Student Ambassador',
     org: 'Google',
     duration: '2026 – Present',
     desc: 'Official Google Student Ambassador — representing Google at SIGCE, promoting Google technologies, developer programs, and fostering a tech-driven campus culture.',
+    badge: null,
   },
   {
     role: 'FlutterFlow Student Ambassador',
     org: 'FlutterFlow × SIGCE',
     duration: '2026 – Present',
     desc: 'Official campus representative for FlutterFlow — organising workshops, speaking at tech clubs, and empowering students to build no-code/low-code mobile apps.',
+    badge: null,
   },
 ]
 
@@ -119,9 +128,9 @@ export default function GuiModal({ open, onClose }) {
             <p className={styles.bio}>
               Passionate B.Tech student specialising in IoT, Blockchain, and Cybersecurity.
               I build end-to-end systems — from custom PCB hardware (KiCad + ESP32) to
-              on-chain ZK credential protocols on StarkNet. Google Student Ambassador &
-              FlutterFlow Student Ambassador at SIGCE, active CTF participant, hackathon veteran, and open-source
-              contributor. Open to internships, research roles, and exciting collaborations.
+               on-chain ZK credential protocols on StarkNet. Currently interning at Wheeltrix as a Web
+               Developer. Google Student Ambassador & FlutterFlow Student Ambassador at SIGCE, active CTF participant,
+               hackathon veteran, and open-source contributor.
             </p>
           </div>
         </section>
@@ -136,6 +145,7 @@ export default function GuiModal({ open, onClose }) {
                 <div className={styles.hackResult}>{e.duration}</div>
                 <div className={styles.hackDetail}>{e.org}</div>
                 <div className={styles.projectDesc} style={{ marginTop: '0.5rem', fontSize: '0.78rem', opacity: 0.8 }}>{e.desc}</div>
+                {e.badge && <div className={styles.award} style={{ marginTop: '0.5rem' }}>{e.badge}</div>}
               </div>
             ))}
           </div>

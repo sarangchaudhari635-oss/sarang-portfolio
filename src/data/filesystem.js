@@ -2,13 +2,13 @@
 export const FS = {
   '/': ['home'],
   '/home': ['sarang'],
-  '/home/sarang': ['about', 'skills', 'projects', 'research', 'blockchain', 'hackathons', 'certs', 'contact'],
+  '/home/sarang': ['about', 'skills', 'projects', 'research', 'blockchain', 'hackathons', 'certs', 'experience', 'contact'],
   '/home/sarang/projects':   ['factline.txt', 'nodesphere.txt', 'shadowhunter.txt', 'mole.txt', 'fundingscout.txt', 'privbadge.txt', 'sygnix.txt', 'reformx.txt'],
   '/home/sarang/blockchain': ['privbadge.txt', 'starknet-notes.txt'],
   '/home/sarang/research':   ['iot-sensor.txt', 'zk-proofs.txt'],
   '/home/sarang/hackathons': ['sustainx2026.txt', 'mumbaihacks2025.txt', 'gdg-buildgrow.txt', 'codelites-pune.txt', 'aiktc-hackatoon.txt', 'hackathon-wins.txt'],
   '/home/sarang/certs':      ['cisco-iot.txt', 'deloitte-cyber.txt', 'jpmorgan-quant.txt'],
-  '/home/sarang/about':      [],
+  '/home/sarang/experience':  ['wheeltrix.txt', 'google-ambassador.txt', 'flutterflow-ambassador.txt'],
   '/home/sarang/skills':     [],
   '/home/sarang/contact':    [],
 }
@@ -16,6 +16,60 @@ export const FS = {
 // ─── File Contents ───────────────────────────────────────────────────
 // Each entry is an array of [colorClass, text] pairs
 export const FILES = {
+
+  '/home/sarang/experience/wheeltrix.txt': [
+    ['cyan',   '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'],
+    ['cyan',   '  EXPERIENCE: WEB DEVELOPMENT INTERN — WHEELTRIX'],
+    ['cyan',   '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'],
+    ['white',  '  Company    : Wheeltrix'],
+    ['white',  '  Role       : Web Development Internship'],
+    ['white',  '  Duration   : May 25, 2026 – Jun 25, 2026  (1 month)'],
+    ['white',  '  Mode       : Remote, India'],
+    ['yellow', '  Status     : 🚀 Active Internship'],
+    ['',       ''],
+    ['green',  '  DESCRIPTION:'],
+    ['white',  '  Selected as Web Development Intern at Wheeltrix — engaging in'],
+    ['white',  '  hands-on projects and assignments designed to bolster practical'],
+    ['white',  '  web development skills and deepen understanding of Web Design'],
+    ['white',  '  principles. Working on real-world projects and gaining industry'],
+    ['white',  '  experience as a first-year engineering student stepping into Year 2.'],
+    ['',       ''],
+    ['green',  '  HIGHLIGHTS:'],
+    ['white',  '  > Real-world web development projects'],
+    ['white',  '  > Hands-on industry experience'],
+    ['white',  '  > Comprehensive support from experienced team members'],
+    ['white',  '  > MSME-registered company'],
+    ['',       ''],
+    ['dim',    '  Offer Date : 18 May 2026  |  Start Date : 25 May 2026'],
+  ],
+
+  '/home/sarang/experience/google-ambassador.txt': [
+    ['cyan',   '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'],
+    ['cyan',   '  ROLE: GOOGLE STUDENT AMBASSADOR — SIGCE'],
+    ['cyan',   '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'],
+    ['white',  '  Organisation : Google'],
+    ['white',  '  Duration     : 2026 – Present'],
+    ['white',  '  Campus       : Smt Indira Gandhi College Of Engineering'],
+    ['',       ''],
+    ['green',  '  DESCRIPTION:'],
+    ['white',  '  Official Google Student Ambassador at SIGCE — promoting Google'],
+    ['white',  '  technologies and developer programs, fostering a tech-driven'],
+    ['white',  '  campus culture.'],
+  ],
+
+  '/home/sarang/experience/flutterflow-ambassador.txt': [
+    ['cyan',   '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'],
+    ['cyan',   '  ROLE: FLUTTERFLOW STUDENT AMBASSADOR — SIGCE'],
+    ['cyan',   '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'],
+    ['white',  '  Organisation : FlutterFlow × SIGCE'],
+    ['white',  '  Duration     : 2026 – Present'],
+    ['',       ''],
+    ['green',  '  DESCRIPTION:'],
+    ['white',  '  Official campus representative for FlutterFlow — organising'],
+    ['white',  '  workshops, speaking at tech clubs, and empowering students to'],
+    ['white',  '  build no-code/low-code mobile apps.'],
+  ],
+
   '/home/sarang/projects/factline.txt': [
     ['cyan',   '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'],
     ['cyan',   '  PROJECT: FACTLINE'],
