@@ -192,7 +192,7 @@ export default function Terminal({ onGuiOpen, onMatrixToggle }) {
     if (cmd === 'resume') {
       addLines(COMMANDS.resume())
       setTimeout(() => {
-        window.open(`${import.meta.env.BASE_URL}resume.pdf`, '_blank')
+        window.open(`${import.meta.env.BASE_URL}resume.html`, '_blank')
       }, 800)
       return
     }

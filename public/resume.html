@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarang Chaudhari — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #00ff88;
+      --cyan: #00e5ff;
+      --yellow: #ffd600;
+      --dim: #8892a4;
+      --bg: #0a0e1a;
+      --surface: #0f1629;
+      --border: #1e2d40;
+      --text: #c9d1d9;
+      --white: #e6edf3;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Print button bar ── */
+    .print-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .print-bar span { color: var(--dim); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+    .print-btn {
+      background: transparent;
+      border: 1px solid var(--green);
+      color: var(--green);
+      padding: 6px 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .print-btn:hover { background: var(--green); color: #000; }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 820px;
+      margin: 30px auto 60px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    .header {
+      padding: 36px 44px 28px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      background: linear-gradient(135deg, #0f1629 0%, #0d1f35 100%);
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--cyan), var(--green));
+    }
+    .name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .name span { color: var(--green); }
+    .role {
+      font-size: 13px;
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 12px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--dim);
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .contact-item a { color: var(--dim); text-decoration: none; transition: color 0.2s; }
+    .contact-item a:hover { color: var(--green); }
+    .contact-icon { color: var(--green); font-size: 11px; }
+
+    /* ── Body layout ── */
+    .body-wrap {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+    }
+    .main-col { padding: 28px 32px; border-right: 1px solid var(--border); }
+    .side-col { padding: 28px 24px; }
+
+    /* ── Section ── */
+    .section { margin-bottom: 26px; }
+    .section-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+    .section-title::before { content: '> '; color: var(--dim); }
+
+    /* ── Experience / Entry ── */
+    .entry { margin-bottom: 18px; }
+    .entry-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 3px; }
+    .entry-title {
+      font-weight: 600;
+      color: var(--white);
+      font-size: 13.5px;
+    }
+    .entry-date {
+      color: var(--dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+    .entry-org {
+      color: var(--cyan);
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 5px;
+    }
+    .entry-badge {
+      display: inline-block;
+      background: rgba(0,255,136,0.1);
+      border: 1px solid rgba(0,255,136,0.3);
+      color: var(--green);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 1px 8px;
+      border-radius: 2px;
+      margin-bottom: 6px;
+    }
+    .entry-badge.yellow {
+      background: rgba(255,214,0,0.08);
+      border-color: rgba(255,214,0,0.3);
+      color: var(--yellow);
+    }
+    .entry-desc {
+      color: var(--dim);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+    .entry ul { padding-left: 14px; margin-top: 4px; }
+    .entry ul li { color: var(--dim); font-size: 12px; margin-bottom: 2px; }
+    .entry ul li::marker { color: var(--green); }
+
+    /* ── Project card ── */
+    .project { margin-bottom: 16px; }
+    .project-name {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--yellow);
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .project-stack {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--dim);
+      margin-bottom: 4px;
+    }
+    .project-desc { color: var(--dim); font-size: 12px; line-height: 1.6; }
+
+    /* ── Skills ── */
+    .skill-group { margin-bottom: 14px; }
+    .skill-group-title {
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .skill-tag {
+      background: rgba(0,229,255,0.06);
+      border: 1px solid rgba(0,229,255,0.2);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    /* ── Cert item ── */
+    .cert-item { margin-bottom: 11px; }
+    .cert-name { color: var(--white); font-size: 12px; font-weight: 500; }
+    .cert-issuer { color: var(--dim); font-family: 'JetBrains Mono', monospace; font-size: 10px; }
+
+    /* ── Hackathon item ── */
+    .hack-item { margin-bottom: 10px; }
+    .hack-name { color: var(--white); font-size: 12px; font-weight: 500; }
+    .hack-result { font-family: 'JetBrains Mono', monospace; font-size: 10px; }
+    .hack-result.win { color: var(--yellow); }
+    .hack-result.dim { color: var(--dim); }
+
+    /* ── Education ── */
+    .edu-entry { }
+    .edu-degree { font-weight: 600; color: var(--white); font-size: 13px; }
+    .edu-school { color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 11px; margin: 2px 0; }
+    .edu-detail { color: var(--dim); font-size: 11px; }
+
+    /* ── Print styles ── */
+    @media print {
+      .print-bar { display: none; }
+      body { background: #fff; color: #1a1a2e; font-size: 12px; }
+      :root {
+        --bg: #fff; --surface: #fff; --border: #ddd;
+        --text: #222; --white: #111; --dim: #555;
+        --green: #006644; --cyan: #0066aa; --yellow: #996600;
+      }
+      .page { margin: 0; border: none; border-radius: 0; max-width: 100%; }
+      .header { background: #f0f4f8 !important; }
+      .header::before { background: #006644; }
+      .body-wrap { grid-template-columns: 1fr 240px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print bar -->
+  <div class="print-bar">
+    <span>// sarang_chaudhari_resume.html</span>
+    <button class="print-btn" onclick="window.print()">⬇ Save as PDF / Print</button>
+  </div>
+
+  <div class="page">
+
+    <!-- ══ HEADER ══ -->
+    <div class="header">
+      <div class="name"><span>//</span> Sarang Chaudhari</div>
+      <div class="role">B.Tech — IoT, Blockchain &amp; Cybersecurity &nbsp;|&nbsp; Web Developer &nbsp;|&nbsp; Open Source</div>
+      <div class="contact-row">
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Mumbai, Maharashtra, India</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🐙</span>
+          <a href="https://github.com/sarangchaudhari635-oss" target="_blank">github.com/sarangchaudhari635-oss</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💼</span>
+          <a href="https://linkedin.com/in/sarang-chaudhari-b10942381" target="_blank">linkedin.com/in/sarang-chaudhari-b10942381</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🌐</span>
+          <a href="https://sarangchaudhari635-oss.github.io/sarang-portfolio/" target="_blank">sarangchaudhari635-oss.github.io/sarang-portfolio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ BODY ══ -->
+    <div class="body-wrap">
+
+      <!-- ── MAIN COLUMN ── -->
+      <div class="main-col">
+
+        <!-- EXPERIENCE -->
+        <div class="section">
+          <div class="section-title">Experience</div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Web Development Intern</div>
+              <div class="entry-date">May 2026 – Jun 2026</div>
+            </div>
+            <div class="entry-org">Wheeltrix &nbsp;·&nbsp; Remote, India</div>
+            <div class="entry-badge">🚀 Active Internship</div>
+            <ul>
+              <li>Selected as Web Development Intern at an MSME-registered company</li>
+              <li>Working on real-world web projects sharpening front-end &amp; back-end skills</li>
+              <li>Gaining hands-on industry experience as a first-year engineering student</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Google Student Ambassador</div>
+              <div class="entry-date">2026 – Present</div>
+            </div>
+            <div class="entry-org">Google &nbsp;·&nbsp; Smt Indira Gandhi College Of Engineering (SIGCE)</div>
+            <ul>
+              <li>Official Google Student Ambassador — promoting Google technologies &amp; developer programs</li>
+              <li>Fostering a tech-driven campus culture at SIGCE</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">FlutterFlow Student Ambassador</div>
+              <div class="entry-date">2026 – Present</div>
+            </div>
+            <div class="entry-org">FlutterFlow × SIGCE</div>
+            <ul>
+              <li>Organising hands-on workshops and speaking at campus tech clubs</li>
+              <li>Empowering students to build no-code / low-code mobile apps with FlutterFlow</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="section">
+          <div class="section-title">Projects</div>
+
+          <div class="project">
+            <div class="project-name">[01] REFORMX &nbsp;<span style="color:var(--yellow);font-size:10px;">🥈 1st Runner-Up — SUSTAINX 2026</span></div>
+            <div class="project-stack">Python · IoT Sensors · ML · MOLE Integration</div>
+            <div class="project-desc">Smart waste management system combining IoT-enabled smart bins with AI-optimized collection routing and anomaly detection. Awarded 1st Runner-Up at SUSTAINX 2026, S.I.E.S GST Nerul.</div>
+          </div>
+
+          <div class="project">
+            <div class="project-name">[02] SYGNIX &nbsp;<span style="color:var(--cyan);font-size:10px;">⚡ Round 2 Qualified — Unplugged 3.0</span></div>
+            <div class="project-stack">ESP32 · KiCad PCB · FlutterFlow · Dart</div>
+            <div class="project-desc">Custom PCB designed in KiCad integrating multi-sensor suite (temp, humidity, air quality) on ESP32 with real-time cloud sync and a companion FlutterFlow mobile app. Round 2 at DJ Sanghvi Hardware Hackathon.</div>
+          </div>
+
+          <div class="project">
+            <div class="project-name">[03] PRIVBADGE</div>
+            <div class="project-stack">StarkNet · Cairo · Pedersen Hash · ArgentX</div>
+            <div class="project-desc">On-chain credential issuance system on StarkNet L2. Uses Pedersen Hash ZK-style commitments and ERC-721-equivalent NFT badges for privacy-preserving verifiable credentials. Testnet active on StarkNet Sepolia.</div>
+          </div>
+
+          <div class="project">
+            <div class="project-name">[04] FACTLINE</div>
+            <div class="project-stack">Node.js · Express · PostgreSQL · React · NLP · Perplexity API</div>
+            <div class="project-desc">Real-time misinformation detection system that analyzes user-submitted claims, validates via AI &amp; external sources, and identifies trending false narratives through semantic clustering.</div>
+          </div>
+
+          <div class="project">
+            <div class="project-name">[05] SHADOWHUNTER</div>
+            <div class="project-stack">React · GSAP · Node.js · Google Cloud · Opal AI</div>
+            <div class="project-desc">AI-powered email security tool that maps a user's digital footprint, detects breached platforms, generates a real-time security score, and provides instant breach alerts via live dashboard.</div>
+          </div>
+
+          <div class="project">
+            <div class="project-name">[06] MOLE — Circular Economy Platform &nbsp;<span style="color:var(--yellow);font-size:10px;">Techvision 1st Runner-Up</span></div>
+            <div class="project-stack">React · Next.js · Supabase · PostgreSQL · Tailwind CSS</div>
+            <div class="project-desc">B2B marketplace enabling industries to exchange industrial waste as reusable resources. Features structured material matching, deal-flow tracking, and waste forecasting models.</div>
+          </div>
+
+          <div class="project">
+            <div class="project-name">[07] NODESPHERE</div>
+            <div class="project-stack">React · TypeScript · Vite · React Flow · AI</div>
+            <div class="project-desc">Visual thinking platform that transforms a single idea into a structured network of insights via AI-driven expansion, summarization, and a local-first knowledge base canvas.</div>
+          </div>
+
+          <div class="project">
+            <div class="project-name">[08] FUNDINGSCOUT</div>
+            <div class="project-stack">Python · FastAPI · Lyzr · Qdrant · SerpAPI · BeautifulSoup</div>
+            <div class="project-desc">Autonomous AI agent that scans the web for startup funding data, extracts structured insights from articles, and maintains a semantic memory using Qdrant to eliminate duplicates.</div>
+          </div>
+        </div>
+
+      </div><!-- /main-col -->
+
+      <!-- ── SIDE COLUMN ── -->
+      <div class="side-col">
+
+        <!-- EDUCATION -->
+        <div class="section">
+          <div class="section-title">Education</div>
+          <div class="edu-entry">
+            <div class="edu-degree">B.Tech — IoT, Blockchain &amp; Cybersecurity</div>
+            <div class="edu-school">Smt Indira Gandhi College Of Engineering</div>
+            <div class="edu-detail">Mumbai University &nbsp;·&nbsp; 2025 – 2029</div>
+            <div class="edu-detail" style="color:var(--dim);font-size:10.5px;margin-top:3px;">Currently: First Year (transitioning to Year 2)</div>
+          </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="section">
+          <div class="section-title">Technical Skills</div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Core Domains</div>
+            <div class="skill-tags">
+              <span class="skill-tag">IoT</span>
+              <span class="skill-tag">Blockchain</span>
+              <span class="skill-tag">Cybersecurity</span>
+              <span class="skill-tag">PCB Design</span>
+              <span class="skill-tag">Web3</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Hardware &amp; Embedded</div>
+            <div class="skill-tags">
+              <span class="skill-tag">ESP32</span>
+              <span class="skill-tag">KiCad</span>
+              <span class="skill-tag">Multi-Sensor</span>
+              <span class="skill-tag">FlutterFlow</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Languages</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Dart</span>
+              <span class="skill-tag">Cairo</span>
+              <span class="skill-tag">Solidity</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Frameworks &amp; Tools</div>
+            <div class="skill-tags">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Vite</span>
+              <span class="skill-tag">Supabase</span>
+              <span class="skill-tag">StarkNet</span>
+              <span class="skill-tag">Web3.js</span>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">AI &amp; Research</div>
+            <div class="skill-tags">
+              <span class="skill-tag">NLP</span>
+              <span class="skill-tag">Qdrant</span>
+              <span class="skill-tag">Agentic AI</span>
+              <span class="skill-tag">Gemini API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="section">
+          <div class="section-title">Certifications</div>
+
+          <div class="cert-item">
+            <div class="cert-name">Intro to IoT &amp; Digital Transformation</div>
+            <div class="cert-issuer">Cisco Networking Academy · Sep 2025</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Cyber Security Job Simulation</div>
+            <div class="cert-issuer">Deloitte Australia via Forage · Dec 2025</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Quantitative Research Job Simulation</div>
+            <div class="cert-issuer">J.P. Morgan via Forage · Dec 2025</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Echelon 2k26 — NIT Surat</div>
+            <div class="cert-issuer">ISEA Stay Safe Online · Jan 2026</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Open Source Connect</div>
+            <div class="cert-issuer">OSCG CO LTD · Feb 2026</div>
+          </div>
+        </div>
+
+        <!-- HACKATHONS -->
+        <div class="section">
+          <div class="section-title">Hackathons &amp; Events</div>
+
+          <div class="hack-item">
+            <div class="hack-name">SUSTAINX 2026 — S.I.E.S GST</div>
+            <div class="hack-result win">🥈 1st Runner-Up (REFORMX)</div>
+          </div>
+          <div class="hack-item">
+            <div class="hack-name">Hardware Unplugged 3.0 — DJ Sanghvi</div>
+            <div class="hack-result win">⚡ Round 2 Qualified (SYGNIX)</div>
+          </div>
+          <div class="hack-item">
+            <div class="hack-name">Mumbai Hacks 2025 — NESCO</div>
+            <div class="hack-result dim">Participated · 3500+ innovators</div>
+          </div>
+          <div class="hack-item">
+            <div class="hack-name">GDG Build &amp; Grow AI — NMIMS</div>
+            <div class="hack-result dim">Participated · Google Gemini AI</div>
+          </div>
+          <div class="hack-item">
+            <div class="hack-name">CodeLites 2.0 — PDEA Pune</div>
+            <div class="hack-result dim">Participated · 24-hr national</div>
+          </div>
+          <div class="hack-item">
+            <div class="hack-name">AIKTC Hackatoon — Kalsekar</div>
+            <div class="hack-result dim">Participated · National Level</div>
+          </div>
+          <div class="hack-item">
+            <div class="hack-name">PAN-IIT CTF 2025 — Redfox</div>
+            <div class="hack-result dim">Participated · Cybersecurity CTF</div>
+          </div>
+        </div>
+
+        <!-- STATUS -->
+        <div class="section">
+          <div class="section-title">Status</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green);">
+            ● Open to Internships &amp; Research Roles
+          </div>
+          <div style="font-size:11px;color:var(--dim);margin-top:4px;">
+            Passionate about emerging technologies — IoT, Blockchain, Cybersecurity &amp; Privacy Systems.
+          </div>
+        </div>
+
+      </div><!-- /side-col -->
+    </div><!-- /body-wrap -->
+  </div><!-- /page -->
+
+</body>
+</html>
